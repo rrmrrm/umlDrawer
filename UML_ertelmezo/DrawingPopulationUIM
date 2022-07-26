@@ -1,0 +1,14 @@
+colsNum : 20
+drawingMultiplicationFactor : 10
+maxAmplitudeMultiplier : 0.150000
+maxDeviation : 8.000000
+maxRangeRatio : 0.150000
+maxScaleX : 2.000000
+maxScaleY : 2.000000
+minDeviation : 5.000000
+minRangeRatio : 0.120000
+minScaleX : 0.500000
+minScaleY : 0.500000
+pointModificationRate : 0.015000
+rowsNum : 20
+scaleChance : 1.000000

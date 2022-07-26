@@ -1,0 +1,125 @@
+[]
+shuffling data
+trainingData size: 2963
+testData size: 2962
+creating model
+compiling model
+training model:
+0. modell tanítása:
+
+  1/149 [..............................] - ETA: 4:33 - loss: 2.6932 - categorical_accuracy: 0.2000
+ 17/149 [==>...........................] - ETA: 0s - loss: 2.5479 - categorical_accuracy: 0.1976  
+ 36/149 [======>.......................] - ETA: 0s - loss: 2.4258 - categorical_accuracy: 0.1858
+ 55/149 [==========>...................] - ETA: 0s - loss: 2.3598 - categorical_accuracy: 0.1814
+ 72/149 [=============>................] - ETA: 0s - loss: 2.3209 - categorical_accuracy: 0.1790
+ 89/149 [================>.............] - ETA: 0s - loss: 2.2919 - categorical_accuracy: 0.1771
+101/149 [===================>..........] - ETA: 0s - loss: 2.2751 - categorical_accuracy: 0.1759
+119/149 [======================>.......] - ETA: 0s - loss: 2.2538 - categorical_accuracy: 0.1741
+138/149 [==========================>...] - ETA: 0s - loss: 2.2350 - categorical_accuracy: 0.1728
+149/149 [==============================] - 4s 15ms/step - loss: 2.2247 - categorical_accuracy: 0.1720 - val_loss: 1.9989 - val_categorical_accuracy: 0.1658
+<tensorflow.python.keras.callbacks.History object at 0x000001666BE0BE50>
+testing models:
+
+   1/2962 [..............................] - ETA: 23:22 - loss: 1.8086 - categorical_accuracy: 1.0000
+  28/2962 [..............................] - ETA: 5s - loss: 1.9806 - categorical_accuracy: 0.0714   
+  56/2962 [..............................] - ETA: 5s - loss: 1.9715 - categorical_accuracy: 0.1250
+  86/2962 [..............................] - ETA: 5s - loss: 1.9709 - categorical_accuracy: 0.1163
+ 115/2962 [>.............................] - ETA: 5s - loss: 1.9806 - categorical_accuracy: 0.1304
+ 146/2962 [>.............................] - ETA: 4s - loss: 1.9920 - categorical_accuracy: 0.1233
+ 176/2962 [>.............................] - ETA: 4s - loss: 1.9952 - categorical_accuracy: 0.1250
+ 210/2962 [=>............................] - ETA: 4s - loss: 2.0036 - categorical_accuracy: 0.1333
+ 243/2962 [=>............................] - ETA: 4s - loss: 2.0063 - categorical_accuracy: 0.1276
+ 276/2962 [=>............................] - ETA: 4s - loss: 2.0104 - categorical_accuracy: 0.1268
+ 308/2962 [==>...........................] - ETA: 4s - loss: 2.0037 - categorical_accuracy: 0.1331
+ 340/2962 [==>...........................] - ETA: 4s - loss: 2.0024 - categorical_accuracy: 0.1412
+ 372/2962 [==>...........................] - ETA: 4s - loss: 2.0030 - categorical_accuracy: 0.1344
+ 403/2962 [===>..........................] - ETA: 4s - loss: 2.0032 - categorical_accuracy: 0.1390
+ 434/2962 [===>..........................] - ETA: 4s - loss: 2.0047 - categorical_accuracy: 0.1429
+ 465/2962 [===>..........................] - ETA: 4s - loss: 2.0043 - categorical_accuracy: 0.1462
+ 496/2962 [====>.........................] - ETA: 4s - loss: 2.0067 - categorical_accuracy: 0.1452
+ 526/2962 [====>.........................] - ETA: 4s - loss: 2.0073 - categorical_accuracy: 0.1464
+ 557/2962 [====>.........................] - ETA: 3s - loss: 2.0075 - categorical_accuracy: 0.1436
+ 586/2962 [====>.........................] - ETA: 3s - loss: 2.0030 - categorical_accuracy: 0.1468
+ 616/2962 [=====>........................] - ETA: 3s - loss: 2.0032 - categorical_accuracy: 0.1461
+ 645/2962 [=====>........................] - ETA: 3s - loss: 2.0039 - categorical_accuracy: 0.1457
+ 675/2962 [=====>........................] - ETA: 3s - loss: 2.0040 - categorical_accuracy: 0.1496
+ 705/2962 [======>.......................] - ETA: 3s - loss: 2.0030 - categorical_accuracy: 0.1546
+ 737/2962 [======>.......................] - ETA: 3s - loss: 2.0024 - categorical_accuracy: 0.1547
+ 769/2962 [======>.......................] - ETA: 3s - loss: 2.0004 - categorical_accuracy: 0.1521
+ 802/2962 [=======>......................] - ETA: 3s - loss: 1.9994 - categorical_accuracy: 0.1571
+ 833/2962 [=======>......................] - ETA: 3s - loss: 1.9982 - categorical_accuracy: 0.1585
+ 864/2962 [=======>......................] - ETA: 3s - loss: 1.9986 - categorical_accuracy: 0.1586
+ 893/2962 [========>.....................] - ETA: 3s - loss: 2.0001 - categorical_accuracy: 0.1568
+ 924/2962 [========>.....................] - ETA: 3s - loss: 1.9997 - categorical_accuracy: 0.1558
+ 955/2962 [========>.....................] - ETA: 3s - loss: 2.0013 - categorical_accuracy: 0.1550
+ 985/2962 [========>.....................] - ETA: 3s - loss: 1.9997 - categorical_accuracy: 0.1553
+1016/2962 [=========>....................] - ETA: 3s - loss: 1.9982 - categorical_accuracy: 0.1604
+1047/2962 [=========>....................] - ETA: 3s - loss: 1.9986 - categorical_accuracy: 0.1605
+1078/2962 [=========>....................] - ETA: 3s - loss: 1.9980 - categorical_accuracy: 0.1614
+1108/2962 [==========>...................] - ETA: 3s - loss: 1.9974 - categorical_accuracy: 0.1606
+1139/2962 [==========>...................] - ETA: 3s - loss: 1.9987 - categorical_accuracy: 0.1589
+1170/2962 [==========>...................] - ETA: 2s - loss: 1.9984 - categorical_accuracy: 0.1598
+1201/2962 [===========>..................] - ETA: 2s - loss: 1.9987 - categorical_accuracy: 0.1582
+1230/2962 [===========>..................] - ETA: 2s - loss: 1.9974 - categorical_accuracy: 0.1610
+1261/2962 [===========>..................] - ETA: 2s - loss: 1.9982 - categorical_accuracy: 0.1586
+1293/2962 [============>.................] - ETA: 2s - loss: 1.9981 - categorical_accuracy: 0.1601
+1324/2962 [============>.................] - ETA: 2s - loss: 1.9984 - categorical_accuracy: 0.1601
+1356/2962 [============>.................] - ETA: 2s - loss: 1.9992 - categorical_accuracy: 0.1586
+1388/2962 [=============>................] - ETA: 2s - loss: 1.9989 - categorical_accuracy: 0.1585
+1419/2962 [=============>................] - ETA: 2s - loss: 1.9989 - categorical_accuracy: 0.1593
+1449/2962 [=============>................] - ETA: 2s - loss: 1.9977 - categorical_accuracy: 0.1622
+1479/2962 [=============>................] - ETA: 2s - loss: 1.9966 - categorical_accuracy: 0.1636
+1510/2962 [==============>...............] - ETA: 2s - loss: 1.9956 - categorical_accuracy: 0.1623
+1541/2962 [==============>...............] - ETA: 2s - loss: 1.9960 - categorical_accuracy: 0.1616
+1572/2962 [==============>...............] - ETA: 2s - loss: 1.9965 - categorical_accuracy: 0.1616
+1602/2962 [===============>..............] - ETA: 2s - loss: 1.9967 - categorical_accuracy: 0.1604
+1633/2962 [===============>..............] - ETA: 2s - loss: 1.9973 - categorical_accuracy: 0.1611
+1663/2962 [===============>..............] - ETA: 2s - loss: 1.9970 - categorical_accuracy: 0.1624
+1694/2962 [================>.............] - ETA: 2s - loss: 1.9976 - categorical_accuracy: 0.1617
+1724/2962 [================>.............] - ETA: 2s - loss: 1.9979 - categorical_accuracy: 0.1613
+1755/2962 [================>.............] - ETA: 1s - loss: 1.9976 - categorical_accuracy: 0.1618
+1785/2962 [=================>............] - ETA: 1s - loss: 1.9970 - categorical_accuracy: 0.1636
+1817/2962 [=================>............] - ETA: 1s - loss: 1.9974 - categorical_accuracy: 0.1635
+1850/2962 [=================>............] - ETA: 1s - loss: 1.9978 - categorical_accuracy: 0.1643
+1883/2962 [==================>...........] - ETA: 1s - loss: 1.9981 - categorical_accuracy: 0.1641
+1914/2962 [==================>...........] - ETA: 1s - loss: 1.9987 - categorical_accuracy: 0.1630
+1946/2962 [==================>...........] - ETA: 1s - loss: 1.9994 - categorical_accuracy: 0.1639
+1979/2962 [===================>..........] - ETA: 1s - loss: 1.9986 - categorical_accuracy: 0.1652
+2012/2962 [===================>..........] - ETA: 1s - loss: 1.9984 - categorical_accuracy: 0.1650
+2045/2962 [===================>..........] - ETA: 1s - loss: 1.9984 - categorical_accuracy: 0.1643
+2078/2962 [====================>.........] - ETA: 1s - loss: 1.9982 - categorical_accuracy: 0.1655
+2111/2962 [====================>.........] - ETA: 1s - loss: 1.9984 - categorical_accuracy: 0.1644
+2144/2962 [====================>.........] - ETA: 1s - loss: 1.9985 - categorical_accuracy: 0.1632
+2176/2962 [=====================>........] - ETA: 1s - loss: 1.9983 - categorical_accuracy: 0.1645
+2207/2962 [=====================>........] - ETA: 1s - loss: 1.9982 - categorical_accuracy: 0.1645
+2240/2962 [=====================>........] - ETA: 1s - loss: 1.9983 - categorical_accuracy: 0.1643
+2272/2962 [======================>.......] - ETA: 1s - loss: 1.9981 - categorical_accuracy: 0.1629
+2305/2962 [======================>.......] - ETA: 1s - loss: 1.9983 - categorical_accuracy: 0.1627
+2336/2962 [======================>.......] - ETA: 1s - loss: 1.9991 - categorical_accuracy: 0.1610
+2369/2962 [======================>.......] - ETA: 0s - loss: 1.9992 - categorical_accuracy: 0.1608
+2402/2962 [=======================>......] - ETA: 0s - loss: 1.9987 - categorical_accuracy: 0.1615
+2434/2962 [=======================>......] - ETA: 0s - loss: 1.9989 - categorical_accuracy: 0.1623
+2467/2962 [=======================>......] - ETA: 0s - loss: 1.9986 - categorical_accuracy: 0.1617
+2499/2962 [========================>.....] - ETA: 0s - loss: 1.9986 - categorical_accuracy: 0.1625
+2531/2962 [========================>.....] - ETA: 0s - loss: 1.9994 - categorical_accuracy: 0.1608
+2564/2962 [========================>.....] - ETA: 0s - loss: 1.9994 - categorical_accuracy: 0.1607
+2597/2962 [=========================>....] - ETA: 0s - loss: 1.9991 - categorical_accuracy: 0.1621
+2629/2962 [=========================>....] - ETA: 0s - loss: 1.9994 - categorical_accuracy: 0.1624
+2662/2962 [=========================>....] - ETA: 0s - loss: 1.9993 - categorical_accuracy: 0.1627
+2694/2962 [==========================>...] - ETA: 0s - loss: 1.9985 - categorical_accuracy: 0.1644
+2727/2962 [==========================>...] - ETA: 0s - loss: 1.9987 - categorical_accuracy: 0.1643
+2755/2962 [==========================>...] - ETA: 0s - loss: 1.9991 - categorical_accuracy: 0.1641
+2769/2962 [===========================>..] - ETA: 0s - loss: 1.9992 - categorical_accuracy: 0.1643
+2794/2962 [===========================>..] - ETA: 0s - loss: 1.9988 - categorical_accuracy: 0.1646
+2829/2962 [===========================>..] - ETA: 0s - loss: 1.9993 - categorical_accuracy: 0.1640
+2865/2962 [============================>.] - ETA: 0s - loss: 1.9991 - categorical_accuracy: 0.1647
+2901/2962 [============================>.] - ETA: 0s - loss: 1.9992 - categorical_accuracy: 0.1651
+2932/2962 [============================>.] - ETA: 0s - loss: 1.9990 - categorical_accuracy: 0.1658
+2962/2962 [==============================] - 5s 2ms/step - loss: 1.9989 - categorical_accuracy: 0.1658
+test results: [1.998867154121399, 0.1657663732767105]
+model and accuracy:{'model': <tensorflow.python.keras.engine.sequential.Sequential object at 0x000001666B65C400>, 'accuracy': 0.1657663732767105}
+------------------------------------------------------------------------------------------
+best model, and its accuracy: {'model': <tensorflow.python.keras.engine.sequential.Sequential object at 0x000001666B65C400>, 'accuracy': 0.1657663732767105}
+saving most accurate model to C:/Users/Miki/Desktop/szakdoga/UML_drawer/UML_ertelmezo/newSavedTfModel
+openin trainedNetwork.txt
+saving most accurate model to trainedNetwork.txt

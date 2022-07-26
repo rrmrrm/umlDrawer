@@ -1,0 +1,179 @@
+#include "recognisedentitywidget.h"
+#include "shape_drawing/drawing.hpp"
+#include "shape_drawing/gesture.h"
+#include "model/umlcomponent.h"
+
+#include <QPainter>
+#include <QColor>
+#include <QBrush>
+#include <QRect>
+#include <QPaintEvent>
+
+bool UMLComponentWidget::isOnGeometry(QMouseEvent* event) const{
+	return true;
+}
+
+UMLComponentWidget::UMLComponentWidget(const std::vector<Drawing*>& drawings_, uint dInd_, EntityWidgetInd thisInd_, QWidget* parent)
+	:	QWidget(parent),	
+		drawings(drawings_),
+		dInd(dInd_),
+		thisInd(thisInd_)
+		{
+}
+
+void UMLComponentWidget::paintEvent(QPaintEvent* e){
+	(void)e;
+	//QWidget::paintEvent(e);
+	//QWidget::update();
+	
+	//cout << "Canvas::paintEvent(...)" << endl;
+	QPainter p(this);
+
+	int w = width();
+	int h = height();
+	QRect whole(0,0,w,h);
+	QColor defCol(100,100,200);
+	QBrush defBrush(defCol,Qt::SolidPattern);
+	p.fillRect(whole, defBrush);
+	///TODO: elobbi TODO: -ban emlitett slotokat is lehetne hasznalni 
+	/// a modelnek a Model_painter_interface-bol szarmazo fuggvenyei helyett:
+	///a modell vezerelne a drawingok painterbeli dotmatrixanak a frissiteset ahelyett,
+	///  hogy a Canvas folyton lekeri a modelltol a drawingokat
+	///the lastDrawing pointer nem szabad, hogy nullptr legyen,
+	/// de addig is ezt a reszt kikommentezem:
+	///if(!isDrawingSet){
+	///	return;
+	///}
+	///
+	auto drawing = dInd < drawings.size() ? drawings[dInd] : nullptr;
+	if(drawing){
+		//szabványos uml komponens kirajzolása, ha a drawing-ban inicializaltuk az UMLComponenet-et:
+		if(drawing->getUMLComponent() != nullptr){
+			QColor color(0,0,0);
+			int lineWidth = 3;
+			p.setPen(QPen(QBrush(color, Qt::SolidPattern), lineWidth));
+			switch(drawing->getUMLComponent()->elementType){
+			//négyzet két vízszintes vonallal( az első a címelválasztó, a második a változókat választja el az eljárásoktól)
+			case ClassElement:{
+				p.drawRect(QRect(0,0,w,h));
+				int titleH = std::min(30, h/4);
+				p.drawLine(0,titleH,w,titleH);
+				p.drawLine(0,titleH+(h-titleH)/2,w,titleH+(h-titleH)/2);
+				break;
+			}
+			case ExtensionSpecifier:{
+				//háromszöget nyilat    ^
+				//                    /_|_\  rajzolunk:
+				p.translate(QPoint(w/2,h/2));
+				p.drawLine(-w/2, 0, 0, -h/2);
+				p.drawLine(0, -h/2, w/2, 0);
+				// függőleges:
+				p.drawLine(0, -h/2, 0, h/2);
+				// vízszintes:
+				p.drawLine(-w/2, 0, w/2, 0);
+				//p.rotate(3.141592);
+				break;
+			}
+			case AggregationSpecifier:{
+				//nyújtott rombuszt   /\   rajzolunk
+				//                    \/
+				p.translate(QPoint(w/2,h/2));
+				p.drawLine(-w/2, 0, 0, -h/2);
+				p.drawLine(0, -h/2, w/2, 0);
+				
+				p.drawLine(-w/2, 0, 0, h/2);
+				p.drawLine(0, h/2, w/2, 0);
+				//p.rotate(3.141592);
+				break;
+			}
+			case Circle:{break;}
+			case CompositionSpecifier:{break;}
+			};
+		}
+		else{
+			auto d = drawing;
+			auto dCells = d->getCells();
+			//double scaleX = (right-left) /(double)(dCells.size());
+			for(uint  col = 0 ; col < dCells.size() ; ++col){
+				//double scaleY = (bot-top) /(double)(dCells[0].size());
+				
+				for(uint  row = 0 ; row < dCells.at(col).size() ; ++row){
+					//QPointF point0(x0, y0);
+					//QPointF point1(x1, y1);
+					QRectF rect(
+									d->getCellWidth() * col, 
+									d->getCellHeight() * row, 
+									d->getCellWidth(), 
+									d->getCellHeight()
+								);
+					if(dCells[col][row] > 1.0){
+						std::cout << "painted drawings cell-value larger than 1.0!" << std::endl;
+					}
+					double alphaColor = 255.0 * dCells[col][row];
+					QColor color(255.0, 255.0, 255.0,alphaColor);
+					
+					p.fillRect(rect, QBrush(color, Qt::SolidPattern));
+				}
+			}
+		}
+	}
+	/*
+	///össszes Drawing celláinak kirajzolása:
+	if(drawing){
+		auto d = drawing;
+		auto dCells = d->getCells();
+		//double scaleX = (right-left) /(double)(dCells.size());
+		for(uint  col = 0 ; col < dCells.size() ; ++col){
+			//double scaleY = (bot-top) /(double)(dCells[0].size());
+			
+			for(uint  row = 0 ; row < dCells.at(col).size() ; ++row){
+				//QPointF point0(x0, y0);
+				//QPointF point1(x1, y1);
+				QRectF rect(
+								d->getDrawingLeft() + d->getCellWidth() * col, 
+								d->getDrawingTop() + d->getCellHeight() * row, 
+								d->getCellWidth(), 
+								d->getCellHeight()
+							);
+				if(dCells[col][row] > 1.0){
+					std::cout << "painted drawings cell-value larger than 1.0!" << std::endl;
+				}
+				double alphaColor = 255.0 * dCells[col][row];
+				
+				QColor color(255.0, 255.0, 255.0,alphaColor);
+				p.fillRect(rect, QBrush(color, Qt::SolidPattern));
+			}
+		}
+	}*/
+}
+
+void UMLComponentWidget::mousePressEvent(QMouseEvent *event){
+	if(isOnGeometry(event)){
+		event->accept();
+		emit mousePressEventAccepted(event);
+	}
+	else{
+		//itt hagyjuk, hogy a Canvas reagáljon a MouseEventre:
+		event->ignore();
+	}
+}
+void UMLComponentWidget::mouseMoveEvent(QMouseEvent *event){
+	if(isOnGeometry(event)){
+		event->accept();
+		emit mouseMoveEventAccepted(event);
+	}
+	else{
+		//itt hagyjuk, hogy a Canvas reagáljon a MouseEventre:
+		event->ignore();
+	}
+}
+void UMLComponentWidget::mouseReleaseEvent(QMouseEvent *event){
+	if(isOnGeometry(event)){
+		event->accept();
+		emit mouseReleaseEventAccepted(event);
+	}
+	else{
+		//itt hagyjuk, hogy a Canvas reagáljon a MouseEventre:
+		event->ignore();
+	}
+}

@@ -1,0 +1,12 @@
+resHorizontal :
+30
+resVertical :
+30
+marginInPixels :
+3
+drawingBlurSD :
+7
+testNetwork :
+1
+drawingsOutFileName :
+drawings30x30.txt
